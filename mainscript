@@ -1,0 +1,81 @@
+import tkinter as tk
+from price import pr1, pr2, pr3
+from tkinter import messagebox
+
+def ksr():
+    a = x.get()
+    b = y.get()
+    c = z.get()
+    try:
+        a = int(a)
+        b = int(b)
+        c = int(c)
+        ttl1['text'] = float(pr1(a))
+        ttl2['text'] = float(pr2(b))
+        ttl3['text'] = float(pr3(c))
+    except ValueError:
+        messagebox.showinfo("Alert Message", "Are you being serious?")
+
+def tmb():
+    x=float(pr1(a))
+    y=float(pr2(b))
+    z=float(pr3(c))
+    total['0.0'] = x+y+z
+#    b = ttl2.get()
+#    c = ttl3.get()
+
+#    d = a+b+c
+#    total["0.0"]=d
+    
+     
+wdw = tk.Tk()
+wdw.title("Cashier") 
+
+lbl0 = tk.Label(wdw, text="Item")
+lbl0.grid(row=0,column=0)
+lbl0 = tk.Label(wdw, text="Quantity")
+lbl0.grid(row=0,column=1)
+lbl0 = tk.Label(wdw, text="Price")
+lbl0.grid(row=0,column=2)
+
+
+x = tk.Entry(wdw)
+x.insert(0,0)
+x.grid(row=1,column=1)
+lbl1 = tk.Label(wdw, text="Coffee: ")
+lbl1.grid(row=1,column=0)
+
+y = tk.Entry(wdw)
+y.insert(0,0)
+y.grid(row=2,column=1)
+lbl2 = tk.Label(wdw, text="Ciggarettes: ")
+lbl2.grid(row=2,column=0)
+
+z = tk.Entry(wdw)
+z.insert(0,0)
+z.grid(row=3,column=1)
+lbl3 = tk.Label(wdw, text="Gas: ")
+lbl3.grid(row=3,column=0)
+
+lbl4 = tk.Label(wdw, text="____________")
+lbl4.grid(row=4,column=2)
+
+total = tk.Label(wdw, text="0.0")
+total.grid(row=5,column=2)
+
+btn = tk.Button(wdw, text = "Count price", command=ksr)
+btn.grid(row=7,column=0)
+
+btn2 = tk.Button(wdw, text = "Sum all", command=tmb)
+btn2.grid(row=7,column=1)
+
+ttl1 = tk.Label(wdw, text="0.0")
+ttl1.grid(row=1,column=2)
+
+ttl2 = tk.Label(wdw, text="0.0")
+ttl2.grid(row=2,column=2)
+
+ttl3 = tk.Label(wdw, text="0.0")
+ttl3.grid(row=3,column=2)
+
+wdw.mainloop()
