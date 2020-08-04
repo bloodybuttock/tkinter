@@ -1,0 +1,16 @@
+prc={1:25000,2:30000,3:20000}
+#prc1=int(25000)
+
+
+def pr1(a):
+    return a*prc[1]
+
+def pr2(a):
+    return a*prc[2]
+
+def pr3(a):
+    return a*prc[3]
+
+def tmbh(x,y,z):
+    b= pr1(a) + pr2(a) + pr3(a)
+    return b
