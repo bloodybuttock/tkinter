@@ -1,0 +1,23 @@
+import random
+import string
+
+def htluas(pj,tg):
+    return pj*tg
+
+def htls(pj,tg):
+    n=random.uniform(5.0,100.0)
+    return n
+
+def htlos(pj,tg):
+    x=['Grrr..','A..?','Ymperor of Nifgaard himseel..','Grand that swoo..','few rounz of gween?','*Farts* Bahahahaha..','banana taygaa']
+    n=random.choice(x)
+    return n
+
+def http(pj,tg):
+    s =''.join((random.choice(string.ascii_letters)for i in range(pj)))
+    s += ''.join((random.choice(string.digits)for i in range (tg)))
+
+    r = list(s)
+    random.shuffle(r)
+    final=''.join(r)
+    return final
